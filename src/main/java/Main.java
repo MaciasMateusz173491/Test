@@ -1,14 +1,25 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// import org.junit.jupiter.api.Test;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import java.util.Scanner;
+
+import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Wprowadź tekst:");
+    String input = scanner.nextLine();
+    scanner.close();
 
-  // @Test
-  // void addition() {
-  //     assertEquals(2, 1 + 1);
-  // }
+    String punctuationMarks = ".,!?;:-''";
+    int count = 0;
+
+    for (char c : input.toCharArray()) {
+      if (punctuationMarks.indexOf(c) != -1) {
+        count++;
+      }
+    }
+
+    System.out.println("Liczba znaków interpunkcyjnych: " + count);
+  }
 }
